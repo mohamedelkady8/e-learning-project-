@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>E-Learning Platform</h1>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav>
+        <button onclick="showSection('newCourse')">New Course</button>
+        <button onclick="showSection('newTeacher')">New Teacher</button>
+        <button onclick="showSection('editCourse')">Edit Course</button>
+        <button onclick="showSection('editTeacher')">Edit Teacher</button>
+    </nav>
+
+    <!-- Sections -->
+    <main>
+        <!-- New Course Section -->
+        <section id="newCourse" class="active">
+            <h2>Add or Edit a Course</h2>
+            <form id="courseForm">
+                <input type="text" id="title" placeholder="Course Title" required>
+                <textarea id="description" placeholder="Course Description" required></textarea>
+                <select id="instructor" required>
+                    <option value="" disabled selected>Select Instructor</option>
+                </select>
+                <input type="number" id="duration" placeholder="Duration (hours)" required>
+                <button type="submit">Save Course</button>
+            </form>
+        </section>
+
+        <!-- New Teacher Section -->
+        <section id="newTeacher">
+            <h2>Add or Edit a Teacher</h2>
+            <form id="teacherForm">
+                <input type="text" id="teacherName" placeholder="Teacher Name" required>
+                <input type="text" id="teacherSubject" placeholder="Subject" required>
+                <input type="number" id="teacherExperience" placeholder="Experience (Years)" required>
+                <input type="email" id="teacherEmail" placeholder="Email" required>
+                <button type="submit">Save Teacher</button>
+            </form>
+        </section>
+
+        <!-- Edit Course Section -->
+        <section id="editCourse">
+            <h2>Edit or Search Courses</h2>
+            <input type="text" id="courseSearch" placeholder="Search by Course Title">
+            <ul id="editCoursesList"></ul>
+        </section>
+
+        <!-- Edit Teacher Section -->
+        <section id="editTeacher">
+            <h2>Edit or Search Teachers</h2>
+            <input type="text" id="teacherSearch" placeholder="Search by Teacher Name">
+            <ul id="editTeachersList"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
